@@ -1,2 +1,2 @@
 # js_dom_ds_2021
-Projeto didático para Javascript(DOM) para turma de desenvolvimento de sistemas 2021.
+Project developed during programming laguage classes to use DOM with js.
