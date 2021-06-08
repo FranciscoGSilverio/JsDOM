@@ -3,21 +3,25 @@ const inputTarefa = document.querySelector('[data-form-input]');
 
 function criarTarefa(evento){
 
-    evento.preventDefault()
+    evento.preventDefault();
 
-    const valorTarefa = inputTarefa.value
-    const listaDeTarefas = document.querySelector('[data-task]')
+    const valorTarefa = inputTarefa.value;
 
-    novaLabel = document.createElement('label')
-    novaLabel.innerText = valorTarefa
-    novaLabel.className = "form-check-label"
+    if(valorTarefa != ""){
 
-    novoItem = document.createElement('li')
-    novoItem.appendChild(novaLabel)
+    const listaDeTarefas = document.querySelector('[data-task]');
 
-    listaDeTarefas.appendChild(novoItem)
+    novaLabel = document.createElement('label');
+    novaLabel.innerText = `- ${valorTarefa}`;
+    novaLabel.className = "form-check-label";
 
-    inputTarefa.value = ""
-}
+    novoItem = document.createElement('li');
+    novoItem.appendChild(novaLabel);
 
+    listaDeTarefas.appendChild(novoItem);
+
+    inputTarefa.value = "";
+    }
+    }
+    
 novaTarefa.addEventListener('click', criarTarefa);
