@@ -1,27 +1,46 @@
-const novaTarefa = document.querySelector('[data-form-button]');
-const inputTarefa = document.querySelector('[data-form-input]');
+(() => {
+  const newTask = document.querySelector("[data-form-button]");
+  const inputTask = document.querySelector("[data-form-input]");
 
-function criarTarefa(evento){
+  function createDeleteButton() {
+    const deleteButton = document.createElement("span");
+    deleteButton.innerText = `x`;
+    deleteButton.className = "close";
 
-    evento.preventDefault();
+    deleteButton.addEventListener("click", deleteTask);
 
-    const valorTarefa = inputTarefa.value;
+    return deleteButton;
+  }
 
-    if(valorTarefa != ""){
+  function deleteTask(event) {
 
-    const listaDeTarefas = document.querySelector('[data-task]');
+    const clickedButton = event.target;
+    const listItem = clickedButton.parentElement;
+    listItem.remove();
 
-    novaLabel = document.createElement('label');
-    novaLabel.innerText = `- ${valorTarefa}`;
-    novaLabel.className = "form-check-label";
+  }
 
-    novoItem = document.createElement('li');
-    novoItem.appendChild(novaLabel);
+  function createTask(event) {
+    event.preventDefault();
 
-    listaDeTarefas.appendChild(novoItem);
+    const taskValue = inputTask.value;
 
-    inputTarefa.value = "";
+    if (taskValue != "") {
+      const tasksList = document.querySelector("[data-task]");
+
+      const newLabel = document.createElement("label");
+      newLabel.innerText = `- ${taskValue}`;
+      newLabel.className = "form-check-label";
+
+      newItem = document.createElement("li");
+      newItem.appendChild(newLabel);
+      newItem.appendChild(createDeleteButton());
+
+      tasksList.appendChild(newItem);
+
+      inputTask.value = "";
     }
-    }
-    
-novaTarefa.addEventListener('click', criarTarefa);
+  }
+
+  newTask.addEventListener("click", createTask);
+})();
