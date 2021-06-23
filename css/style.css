@@ -187,3 +187,7 @@ body {
     right: 45px;
     padding: 3px 4px 3px 4px; 
   }
+
+.task-list{
+    padding-left: 20px;
+}
