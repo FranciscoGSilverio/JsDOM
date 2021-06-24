@@ -4,7 +4,7 @@ The project has 3 different actions: to add a new item, to check the finished it
 
 <li> You can use the list using the following command line on git:
 
-      $ git clone https://github.com/libgit2/libgit2
+      $ git clone https://github.com/FranciscoGSilverio/JsDOM.git
 
 <li> Than, open the "index.html" and you will see this screen:
 
