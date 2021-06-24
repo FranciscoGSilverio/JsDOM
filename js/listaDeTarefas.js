@@ -1,6 +1,5 @@
 (() => {
   const newTask = document.querySelector("[data-form-button]");
-  const inputTask = document.querySelector("[data-form-input]");
 
   function createDeleteButton() {
     const deleteButton = document.createElement("span");
@@ -12,17 +11,33 @@
     return deleteButton;
   }
 
-  function deleteTask(event) {
+  function createConcludeButton() {
+    const concludeButton = document.createElement("input");
 
+    concludeButton.setAttribute("type", "checkbox");
+    concludeButton.classList = "form-check-input";
+
+    concludeButton.addEventListener("click", finishTask);
+
+    return concludeButton;
+
+    function finishTask(event) {
+      const concludeButtonClicked = event.target;
+      const listItemConcluded = concludeButtonClicked.parentElement;
+      listItemConcluded.classList.toggle("taskFinished");
+    }
+  }
+
+  function deleteTask(event) {
     const clickedButton = event.target;
     const listItem = clickedButton.parentElement;
     listItem.remove();
-
   }
 
   function createTask(event) {
     event.preventDefault();
 
+    const inputTask = document.querySelector("[data-form-input]");
     const taskValue = inputTask.value;
 
     if (taskValue != "") {
@@ -35,6 +50,7 @@
       newItem = document.createElement("li");
       newItem.appendChild(newLabel);
       newItem.appendChild(createDeleteButton());
+      newItem.appendChild(createConcludeButton());
 
       tasksList.appendChild(newItem);
 

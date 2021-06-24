@@ -188,6 +188,10 @@ body {
     padding: 3px 4px 3px 4px; 
   }
 
-.task-list{
-    padding-left: 20px;
+.taskList{
+    margin-left: 3%;
+}
+
+.taskFinished{
+    text-decoration: line-through;
 }
