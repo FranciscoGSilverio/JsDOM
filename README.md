@@ -8,6 +8,6 @@ The project has 3 different actions: to add a new item, to check the finished it
 
 <li> Than, open the "index.html" and you will see this screen:
 
-![ToDoListScreenshot](https://user-images.githubusercontent.com/79937589/123345816-4d2d6f80-d52d-11eb-9248-76d5f7bcbc65.png)
+![image](https://user-images.githubusercontent.com/79937589/123531038-68d47980-d6d7-11eb-9ed6-6449f0355450.png)
 
 <li> Notice that the project uses only native JavaScript, HTML and a CSS for style. There is no communication with a data base or any kind of information storage, so when you     leave or reload the page, your changes will not be saved. 
